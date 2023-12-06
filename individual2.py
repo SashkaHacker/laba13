@@ -5,11 +5,9 @@ from statistics import median, mean, stdev
 
 
 def calculate_statistic(**data):
-    dct = {}
-    for key, value in data.items():
-        dct[key] = {"mean": mean(value),
-                    "median": median(value),
-                    "std_dev": round(stdev(value), 2)}
+    dct = {key: {'mean': mean(value), 'median': median(value),
+                 'std_dev': round(stdev(value), 2)}
+           for key, value in data.items()}
     return dct
 
 
